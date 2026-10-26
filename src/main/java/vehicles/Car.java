@@ -7,12 +7,16 @@ package vehicles;
  */
 public class Car extends Vehicle {
 
+    // Private field for encapsulation
     private int fuelLevelPercent;
 
     public Car(String model, int maxSpeed, int passengerCapacity,
                int fuelLevelPercent) {
+
+        // Constructor chaining
         super(model, maxSpeed, passengerCapacity);
 
+        // Validate fuel level
         if (fuelLevelPercent < 0 || fuelLevelPercent > 100) {
             throw new IllegalArgumentException(
                     "Fuel level must be between 0 and 100"
@@ -22,14 +26,16 @@ public class Car extends Vehicle {
         this.fuelLevelPercent = fuelLevelPercent;
     }
 
+    // Getter for fuel level
     public int getFuelLevelPercent() {
         return fuelLevelPercent;
     }
 
+    // Refuel the car, capped at 100%
     public void refuel(int amount) {
         if (amount <= 0) {
             throw new IllegalArgumentException(
-                    "Refuel amount must be greater than 0"
+                    "Refuel amount must be positive"
             );
         }
 
