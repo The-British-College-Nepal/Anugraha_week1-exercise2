@@ -20,7 +20,7 @@ public class FleetManager {
     public void addVehicle(Vehicle vehicle) {
         if (vehicle == null) {
             throw new IllegalArgumentException(
-                    "Vehicle must not be null"
+                    "Vehicle cannot be null"
             );
         }
 
